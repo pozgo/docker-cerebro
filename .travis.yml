@@ -12,7 +12,7 @@ script:
     - repo_name="polinux/cerebro"
     - docker build -t "$repo_name" .
 
-    - docker run -d --name -p 9000:9000 cerebro $repo_name
+    - docker run -d --name cerebro -p 9000:9000 $repo_name
     - sleep 5
     # TEST
     - docker logs -f cerebro >> cerebro.log 2>&1 & 
