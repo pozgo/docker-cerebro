@@ -1,4 +1,4 @@
-# cerebro in a Docker (CentOS and Alpine version available)
+# cerebro in a Docker (Alpine)
 [![Build Status](https://travis-ci.org/pozgo/docker-cerebro.svg)](https://travis-ci.org/pozgo/docker-cerebro)  
 [![GitHub Open Issues](https://img.shields.io/github/issues/pozgo/docker-cerebro.svg)](https://github.com/pozgo/docker-cerebro/issues)  
 [![Stars](https://img.shields.io/github/stars/pozgo/docker-cerebro.svg?style=social&label=Stars)]()
