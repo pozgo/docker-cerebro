@@ -14,6 +14,5 @@ script:
 
     - docker run -d --name cerebro -p 9000:9000 "$IMAGE"
     # TEST
-    - docker logs -f cerebro >> cerebro.log 2>&1 & 
-    - while true; do if grep "Listening for HTTP on /0.0.0.0:9000" -a cerebro.log; then break; else sleep 1; fi done
+    - while true; do if grep "Listening for HTTP on /0.0.0.0:9000" | docker logs cerebro; then break; else sleep 1; fi done
     - curl -sSLi http://localhost:9000 | grep '200 OK' 
