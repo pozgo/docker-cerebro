@@ -1,0 +1,21 @@
+branches:
+  only:
+    - master
+
+services:
+    - docker
+
+before_install:
+    - docker --version
+
+script:
+    - repo_name="polinux/cerebro"
+    - docker build -t "$repo_name" .
+
+    - docker run -d --name -p 9000:9000 cerebro $repo_name
+    - sleep
+    # TEST
+    - docker logs -f cerebro >> cerebro.log 2>&1 & 
+    - sleep 5
+    - while true; do if grep "Listening for HTTP on /0.0.0.0:9000" -a cerebro.log; then break; else sleep 1; fi done
+    - curl -sSLi http://localhost:9000 | grep '200 OK' 
