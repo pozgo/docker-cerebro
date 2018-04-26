@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-ENV   CEREBRO_VERSION="0.7.1" \
+ENV   CEREBRO_VERSION="0.7.3" \
       ES_ADDRESS="localhost" \
       ES_PORT="9200" \
       ES_NAME="elasticsearch"
