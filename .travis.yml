@@ -9,5 +9,5 @@ script:
 
     - docker run -d --name cerebro -p 9000:9000 polinux/cerebro
     # TEST
-    - while true; do if docker logs cerebro | grep "Listening for HTTP on /0:0:0:0:0:0:0:0:9000"; then break; else sleep 1; fi done
+    - while true; do if docker logs cerebro | grep "Listening for HTTP"; then break; else sleep 1; fi done
     - curl -sSLi http://localhost:9000 | grep '200 OK' 
